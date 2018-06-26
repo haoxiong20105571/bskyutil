@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="brother_sky.dao.BrotherSkyMapper">
+	
+	<!-- 通用查询 -->
+	<select id="brotherSkySearch" resultType="java.util.LinkedHashMap" parameterType="java.util.Map">
+		${sql}
+	</select>
+	
+	<!-- 通用查询二-->
+	<select id="brotherSkySingleSearch" resultType="java.util.LinkedHashMap" parameterType="java.util.Map">
+		${sql}
+	</select>
+
+	<!-- 获取总数 -->
+	<select id="getTotalNum" resultType="java.lang.Long" parameterType="java.util.Map">
+		${sql}
+	</select>
+	
+	<!-- 获取单个字符串集合 -->
+	<select id="getSingleStringList" resultType="java.lang.String" parameterType="java.util.Map">
+		${sql}
+	</select>
+	
+	<!-- 获取单个Long集合 -->
+	<select id="getSingleLongList" resultType="java.lang.Long" parameterType="java.util.Map">
+		${sql}
+	</select>
+	
+	<insert id="britherSkyInsert" parameterType="java.util.Map">
+		 <selectKey resultType="java.lang.Long" order="AFTER" keyProperty="id">
+          SELECT LAST_INSERT_ID()
+     	 </selectKey>
+		 ${sql}
+	</insert>
+	
+	<update id="britherSkyUpdate" parameterType="java.util.Map">
+		${sql}
+	</update>
+</mapper>
